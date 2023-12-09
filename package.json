@@ -7,7 +7,7 @@
     "start": "node app",
     "format": "prettier --write \"*.js\"",
     "lint": "eslint \"*.js\" --quiet",
-    "commit": "cz"
+    "cz": "cz"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +22,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
   }
 }
