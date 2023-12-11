@@ -12,12 +12,12 @@ const getTbillsData = async () => {
     if (res.status === 200 && res.data.success) {
       return {
         success: true,
-        data: res.data.result.records,
+        items: res.data.result.records,
       };
     } else {
       return {
         success: false,
-        data: "Failed to fetch the website",
+        items: "Failed to fetch the website",
       };
     }
   } catch (err) {

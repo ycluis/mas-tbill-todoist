@@ -9,15 +9,19 @@ const api = new TodoistApi(process.env.TODOIST_API);
 
 (async () => {
   try {
-    const data = await getTbillsData();
+    const { success, items } = await getTbillsData();
 
-    if (data.success) {
-      // TODO: Proceed with Todoist API
-      // api
-      //   .getTasks()
-      //   .then((tasks) => console.log(tasks))
-      //   .catch((err) => console.log(err));
+    if (success) {
+      for (const row of items) {
+        await api.addTask({
+          content: `T-bill ${row.issue_code} ANN Date`,
+          dueString: row.ann_date,
+          projectId: process.env.TODOIST_PROJECT_ID,
+        });
+      }
     }
+
+    console.log("SUCCESS");
   } catch (err) {
     console.log(err);
   }
