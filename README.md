@@ -15,7 +15,8 @@ This project is a JavaScript application that fetches Treasury Bill (T-Bill) dat
 1. **Clone the Repository:**
 
    ```bash
-
+    git clone https://github.com/ycluis/mas-tbill-todoist.git
+    cd mas-tbill-todoist
    ```
 
 2. **Install Dependencies:**
